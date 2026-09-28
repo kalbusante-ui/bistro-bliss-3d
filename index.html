@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bistro Bliss 3D</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js';
+      window.THREE = THREE;
+    </script>
+  </head>
+  <body>
+    <div id="game">
+      <canvas id="scene"></canvas>
+
+      <div id="hud">
+        <div class="hud-group left">
+          <div class="brand">BB</div>
+          <div class="stat">
+            <span>LEVEL</span>
+            <strong id="levelValue">1</strong>
+          </div>
+          <div class="stat">
+            <span>REP</span>
+            <strong id="repValue">★ 1</strong>
+          </div>
+          <div class="stat wide">
+            <span>GOAL</span>
+            <strong id="goalValue">0 / 12</strong>
+          </div>
+          <div class="xp-wrap">
+            <div class="xp-row">
+              <span>XP</span>
+              <strong id="xpText">0 / 180</strong>
+            </div>
+            <div class="xp-bar"><i id="xpBar"></i></div>
+          </div>
+        </div>
+
+        <div class="hud-group right">
+          <div class="stat">
+            <span>SALES</span>
+            <strong id="salesValue">0</strong>
+          </div>
+          <div class="stat coin">
+            <span>COINS</span>
+            <strong id="coinValue">150</strong>
+          </div>
+          <div class="stat gem">
+            <span>GEMS</span>
+            <strong id="gemValue">5</strong>
+          </div>
+          <button id="pauseBtn">⏸</button>
+        </div>
+      </div>
+
+      <div id="toast"></div>
+      <div id="prompt">Walk to the kitchen or customer and press E</div>
+
+      <div id="panel" class="hidden">
+        <div class="panel-head">
+          <h3 id="panelTitle">SHOP</h3>
+          <button id="closePanel">✕</button>
+        </div>
+        <div id="panelBody"></div>
+      </div>
+
+      <div id="dock">
+        <button data-panel="staff">👨‍🍳 STAFF</button>
+        <button data-panel="upgrade">⬆️ UPGRADE</button>
+        <button data-panel="menu">🍔 MENU</button>
+        <button data-panel="bonus">🎁 BONUS</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
